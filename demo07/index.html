@@ -34,5 +34,27 @@
         document.getElementById('example')
       );
     </script>
+  <script type="text/babel">
+    class Time extends React.Component{
+      constructor(props) {
+        super(props);
+        this.myTextInput=React.createRef();
+        this.handleClick=this.handleClick.bind(this);
+      }
+      handleClick(){
+        this.myTextInput.current.value='2020-08-10';
+      }
+      render(){
+       return (<div>
+         <input defaultValue="2020-08-13" type="text" ref={this.myTextInput} />
+         <input value='输入日期' type="button" onClick={this.handleClick} />
+       </div>);
+      }
+    }
+    ReactDOM.render(
+      <Time/>,
+      document.getElementById('example')
+    );
+  </script>
   </body>
 </html>

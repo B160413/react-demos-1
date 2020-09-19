@@ -7,10 +7,11 @@
     <script src="../build/babel.min.js"></script>
   </head>
   <body>
-    <div id="example"></div>
+  <p>JSX 的基本语法规则：遇到 HTML 标签（以 < 开头），就用 HTML 规则解析；遇到代码块（以 { 开头），就用 JavaScript 规则解析</p>
+    <div id="example">
+    </div>
     <script type="text/babel">
       var names = ['Alice', 'Emily', 'Kate'];
-
       ReactDOM.render(
         <div>
         {
@@ -22,5 +23,29 @@
         document.getElementById('example')
       );
     </script>
+  <script type="text/babel">
+    var colors=['blue','red','green'];
+    ReactDOM.render(
+      <div>
+        {colors.map(function (name,index){
+          return <div key={index}>Today is {name}!</div>
+        })}
+      </div>,
+      document.getElementById('example')
+    );
+  </script>
+  <script type="text/babel">
+    let writers=['村上春树','鲁迅','萧红'];
+    ReactDOM.render(
+            <div>
+              {
+                writers.map(function(name,index){
+                  return <p>作家如{name}</p>
+                })
+              }
+            </div>,
+            document.getElementById('example')
+    );
+  </script>
   </body>
 </html>

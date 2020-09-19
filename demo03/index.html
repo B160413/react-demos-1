@@ -9,7 +9,7 @@
   <body>
     <div id="example"></div>
     <script type="text/babel">
-      var arr = [
+      let arr = [
         <h1 key="1">Hello world!</h1>,
         <h2 key="2">React is awesome</h2>,
       ];
@@ -18,5 +18,26 @@
         document.getElementById('example')
       );
     </script>
+  <script type="text/babel">
+    var food=[
+            <p key="1">Do you want some apples?</p>,
+            <p key="2">Do you want some bananas?</p>,
+            <p key="3">Do you want some oranges?</p>
+    ];
+    ReactDOM.render(
+            <div>{food}</div>,
+            document.getElementById('example')
+    )
+  </script>
+  <script type="text/babel">
+    var frame=[<p key="1">React</p>,
+            <p key="2">Vue</p>,
+      <p key="3">Bootstrap</p>
+    ]
+    ReactDOM.render(
+            <div>{frame}</div>,
+            document.getElementById('example')
+    );
+  </script>
   </body>
 </html>

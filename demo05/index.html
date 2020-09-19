@@ -31,6 +31,48 @@
         document.getElementById('example')
       );
     </script>
+  <script type="text/babel">
+    class Tips extends React.Component{
+      render(){
+        return (
+                <ul>
+                {
+                  React.Children.map(this.props.children, function (child){
+                    return <li>{child}</li>;
+                  })
+                }
+                </ul>
+        );
+      }
+    }
+    ReactDOM.render(
+            <Tips>
+              <p>chen</p>
+              <p>tao</p>
+            </Tips>,
+            document.getElementById('example')
+    );
+  </script>
+  <script type="text/babel">
+    class Album extends React.Component{
+      render(){
+        return (
+                <ul>
+                  {React.Children.map(this.props.children,function(child){
+                    return <h1>{child}</h1>;
+                  })}
+                </ul>
+        )
+      };
+    }
+    ReactDOM.render(
+            <Album>
+              <span>Hello</span>
+              <span>World!</span>
+            </Album>,
+            document.getElementById('example')
+    );
+  </script>
   </body>
 </html>
 

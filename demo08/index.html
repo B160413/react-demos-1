@@ -8,7 +8,7 @@
   </head>
   <body>
     <div id="example"></div>
-    <script type="text/babel">
+    <!--<script type="text/babel">
       class LikeButton extends React.Component {
         constructor(props) {
           super(props)
@@ -34,7 +34,62 @@
         <LikeButton />,
         document.getElementById('example')
       );
-    </script>
+    </script>-->
+  <!--<script type="text/babel">
+    class Intruction extends React.Component{
+      constructor(props){
+        super(props)
+        this.state={
+          name:false
+        }
+        this.handleClick=this.handleClick.bind(this)
+      }
+      handleClick(event){
+        this.setState({
+          name:!this.state.name
+        });
+      }
+      render() {
+        var text=this.state.name?"CT":"XXX";
+        return (<p onClick={this.handleClick}>
+          My name is {text}.
+        </p>);
+      }
+    }
+
+    ReactDOM.render(
+      <Intruction />,
+      document.getElementById('example')
+    );
+  </script>-->
+  <script type="text/babel">
+    class Speach extends React.Component{
+      constructor(props) {
+        super(props)
+        this.state={
+          title:false,
+          header:false,
+          content:false
+        }
+        this.handleClick=this.handleClick.bind(this)
+      }
+      handleClick(e){
+        this.setState({title:!this.state.title,header:!this.state.header,context:!this.state.context})
+      }
+      render(){
+        var text1=this.state.title?'Title':'XXXXX',text2=this.state.header?'header':'XXXXXX',text3=this.state.context?'context':'XXXXXXX';
+        return (<span onClick={this.handleClick}>
+          <h1>This is {text1}</h1>
+          <h3>This is {text2}</h3>
+          <p>This is {text3}</p>
+        </span>);
+      }
+    }
+    ReactDOM.render(
+            <Speach />,
+            document.getElementById('example')
+    );
+  </script>
   </body>
 </html>
 

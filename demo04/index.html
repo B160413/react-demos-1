@@ -20,5 +20,42 @@
         document.getElementById('example')
       );
     </script>
+  <script type="text/babel">
+    class Introduction extends React.Component{
+      render(){
+        return <div>
+          <h1>Hello {this.props.name}</h1>
+          <p>Have a good time!</p>
+        </div>;
+      }
+    }
+    ReactDOM.render(
+            <Introduction name="陈涛"/>,
+    document.getElementById('example')
+    );
+  </script>
+  <script type="text/babel">
+    class Weather extends React.Component{
+      render(){
+        return <p>{this.props.name}</p>;
+      }
+    }
+    ReactDOM.render(
+            <Weather name="Sunny"/>,
+            document.getElementById('example')
+    );
+  </script>
+  <script type="text/babel">
+    var components=[<h1>HelloMessage</h1>,<h1>Introduction</h1>,<h1>Weather</h1>];
+    class Components extends React.Component{
+      render(){
+        return <p>{components}</p>;
+      }
+    }
+    ReactDOM.render(
+          <Components/>,
+          document.getElementById('example')
+    );
+  </script>
   </body>
 </html>
